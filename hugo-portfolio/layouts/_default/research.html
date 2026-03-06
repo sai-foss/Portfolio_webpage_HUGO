@@ -1,0 +1,74 @@
+{{ define "main" }}
+<div class="max-w-4xl mx-auto px-4 pt-12 pb-24">
+    <h1 class="text-5xl font-bold mb-8 text-text-primary-light dark:text-text-primary-dark">{{ .Title }}</h1>
+
+    <div class="space-y-8">
+        {{ $researchData := index site.Data .Language.Lang "research" }}
+        {{ with $researchData.research }}
+        {{ range . }}
+        <div
+            class="bg-bg-primary-light dark:bg-bg-secondary-dark p-8 rounded-lg border border-border-primary-light dark:border-border-primary-dark hover:border-accent-light dark:hover:border-accent-dark transition-all duration-300">
+            <div class="space-y-4">
+                <a href="{{ .link }}" target="_blank" rel="noopener noreferrer"
+                    class="group inline-flex items-center gap-2 text-xl font-medium text-text-secondary-light dark:text-text-secondary-dark hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-200">
+                    <h2 class="text-2xl font-semibold text-text-primary-light dark:text-text-primary-dark mb-2">{{
+                        .title }}</h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="opacity-70 group-hover:opacity-100 transition-opacity duration-200">
+                        <path d="M7 17l9.2-9.2M17 17V7H7" />
+                    </svg>
+                </a>
+                <p class="text-text-secondary-light dark:text-text-secondary-dark text-base">{{ .authors }}</p>
+
+                {{ if .accomplishments }}
+                <ul
+                    class="list-disc list-inside space-y-2 text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
+                    {{ range .accomplishments }}
+                    <li>{{ . }}</li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+
+                <div class="flex flex-wrap gap-2 mt-6">
+                    <a href="{{ .link }}" target="_blank" rel="noopener noreferrer"
+                        class="px-2 py-1 text-xs bg-bg-primary-light dark:bg-bg-tertiary-dark text-text-secondary-light dark:text-text-secondary-dark border border-border-primary-light dark:border-border-primary-dark rounded-md transition-all duration-300 inline-flex items-center hover:text-text-primary-light dark:hover:text-text-primary-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="mr-2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        Paper
+                    </a>
+
+                    {{ if .workshop_link }}
+                    <a href="{{ .workshop_link }}" target="_blank" rel="noopener noreferrer"
+                        class="px-2 py-1 text-xs bg-bg-primary-light dark:bg-bg-tertiary-dark text-text-secondary-light dark:text-text-secondary-dark border border-border-primary-light dark:border-border-primary-dark rounded-md transition-all duration-300 inline-flex items-center hover:text-text-primary-light dark:hover:text-text-primary-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="mr-2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        Workshop
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        {{ else }}
+        <div
+            class="text-text-secondary-light dark:text-text-secondary-dark p-8 bg-bg-primary-light dark:bg-bg-secondary-dark rounded-lg border border-border-primary-light dark:border-border-primary-dark shadow-sm">
+            <p class="text-center">No research data found.</p>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
