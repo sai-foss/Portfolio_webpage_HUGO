@@ -7,9 +7,7 @@
                 {{ $author := cond (and $authorData $authorData.author) $authorData.author site.Params }}
                 {{ with $author }}
                 <p class="text-text-secondary-light dark:text-text-secondary-dark text-xm pb-12">
-                    © {{ now.Format "2006" }} {{ .name }} • Get this <a
-                        href="https://themes.gohugo.io/themes/hugo-noir/" target="_blank"
-                        class="animated-link text-blue-500 hover:text-blue-400 transition-colors duration-200">Theme</a>.
+                    © {{ now.Format "2006" }} {{ .name }}
                 </p>
                 {{ end }}
             </div>

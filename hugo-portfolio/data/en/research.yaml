@@ -1,9 +1,0 @@
-research:
-  - title: "Advanced Financial Reasoning at Scale: A Comprehensive Evaluation of Large Language Models on CFA Level III"
-    authors: "Pranam Shetty, Abhisek Upadhayaya, Parth Mitesh Shah, Srikanth Jagabathula, Shilpi Nayak, Anna Joo Fee"
-    link: "https://arxiv.org/abs/2507.02954"
-    workshop_link: "https://finllm.github.io/workshop/#/fcb2025"
-    presentation_link: "https://docs.google.com/videos/d/1XjCH6u83y2T5TTk1jFUpYzw09iQaZXw30bZGlthPDls/edit?scene=id.p#scene=id.p"
-    accomplishments:
-      - "Won best oral presentation award at FimLLM2025"
-      - "Research cited by CNBC, The Wall Street Journal, Barron’s, CNBC, and The Financial Times."

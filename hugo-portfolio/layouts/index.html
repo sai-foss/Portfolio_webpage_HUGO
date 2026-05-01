@@ -513,7 +513,7 @@
         </div>
     </section>
     {{ else }}
-    {{ warnf "No experience data found for language %q. Please define either data/%s/experience.(yaml|toml|json) or params.experience in config." .Language.Lang .Language.Lang }}
+    {{ warnf "No experience data found for a language"}}
     {{ end }}
 
     <!-- Projects Section -->
@@ -582,13 +582,15 @@
                             {{ if .website }}
                             <a href="{{ .website }}" target="_blank" rel="noopener noreferrer"
                                 class="bg-white/90 backdrop-blur-sm hover:bg-white text-black text-xs md:text-sm font-medium py-1 md:py-1.5 px-2 md:px-3 rounded-md inline-flex items-center transition-all duration-300 transform opacity-100 md:opacity-0 group-hover:opacity-100 shadow-lg hover:shadow-xl">
-                                Visit Website 
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 ml-0.5" width="34" height="34" viewBox="0 0 24 24">
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                                    <circle cx="12" cy="12" r="9"/>
-                                    <path d="M14 14v-4m0 0h-4m4 0l-4 4"/>
-                                </g>
-                            </svg>
+                                Visit Website
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 ml-0.5" width="34"
+                                    height="34" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="9" />
+                                        <path d="M14 14v-4m0 0h-4m4 0l-4 4" />
+                                    </g>
+                                </svg>
                             </a>
                             {{ end }}
                         </div>
@@ -597,12 +599,14 @@
             </div>
             {{ end }}
             <div class="flex justify-center mt-4 md:mt-8">
-                <a href="{{ "projects/" | absLangURL }}" class="text-blue-500 hover:text-blue-400 transition-colors duration-200 text-sm md:text-lg">{{ T "viewAll" }}</a>
+                <a href="{{ " projects/" | absLangURL }}"
+                    class="text-blue-500 hover:text-blue-400 transition-colors duration-200 text-sm md:text-lg">{{ T
+                    "viewAll" }}</a>
             </div>
         </div>
     </section>
     {{ else }}
-    {{ warnf "No project data found for language %q. Please define either data/%s/projects.(yaml|toml|json) or params.projects in config." .Language.Lang .Language.Lang }}
+    {{ warnf "No project data found for a language" }}
     {{ end }}
 
     <!-- Blog Section -->
@@ -634,11 +638,12 @@
             {{ end }}
         </div>
         <div class="flex justify-center mt-8">
-            <a href="{{ "blogs/" | absLangURL }}" class="text-blue-500 hover:text-blue-400 transition-colors duration-200 text-lg">{{ T "viewAll" }}</a>
+            <a href="{{ " blogs/" | absLangURL }}"
+                class="text-blue-500 hover:text-blue-400 transition-colors duration-200 text-lg">{{ T "viewAll" }}</a>
         </div>
     </section>
     {{ else }}
-    {{ warnf "No blog data found for language %q. Please define either data/%s/blogs.(yaml|toml|json) or params.blogs in config." .Language.Lang .Language.Lang }}
+    {{ warnf "No blog data found for language"}}
     {{ end }}
 </div>
 
